@@ -13,6 +13,5 @@ Write a method that determines if all the boxes can be opened.
 - There can be keys that do not have boxes
 - The first box boxes[0] is unlocked
 - Return True if all boxes can be opened, else return False
-
-
+---
 ![](https://media.giphy.com/media/dCcGuJ77pgICjpSzL6/giphy.gif)
