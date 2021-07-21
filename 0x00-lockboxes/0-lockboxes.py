@@ -12,7 +12,7 @@ def canUnlockAll(boxes):
         return(True)
 
     # Check if first box is empty.
-    if bool(boxes[0]) is False:
+    if bool(boxes) is False or bool(boxes[0]) is False:
         return (False)
 
     # Create auxiliary array.
