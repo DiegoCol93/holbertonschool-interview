@@ -24,6 +24,8 @@ def canUnlockAll(boxes):
 
     # Check all keys in the firt box.
     for key in boxes[0]:
+        if key > len(boxes):
+            continue
         if opened[key] is False:
             # Call auxiliary recursive method.
             opened = checkKeysInBox(key, opened, boxes)
