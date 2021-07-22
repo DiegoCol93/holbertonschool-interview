@@ -13,7 +13,7 @@ def canUnlockAll(boxes):
 
     # Check if first box is empty.
     if bool(boxes) is False or bool(boxes[0]) is False:
-        return (False)
+        return (True)
 
     # Create auxiliary array.
     opened = []
@@ -28,8 +28,9 @@ def canUnlockAll(boxes):
             # Call auxiliary recursive method.
             opened = checkKeysInBox(key, opened, boxes)
 
+    print("opened {}".format(opened))
     if all(opened):
-        return(False)
+        return(True)
     else:
         return(False)
 
