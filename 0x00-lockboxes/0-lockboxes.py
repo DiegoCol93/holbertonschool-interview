@@ -28,14 +28,10 @@ def canUnlockAll(boxes):
             # Call auxiliary recursive method.
             opened = checkKeysInBox(key, opened, boxes)
 
-    # if all(opened):
     if False in opened:
         return False
     else:
         return True
-    #     return(True)
-    # else:
-    #     return(False)
 
 
 def checkKeysInBox(key, opened, boxes):
