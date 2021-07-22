@@ -20,8 +20,7 @@ def canUnlockAll(boxes):
     for key in boxes[0]:
         if key > len(boxes):
             continue
-        if opened[key] is False:
-            opened = checkKeysInBox(key, opened, boxes)
+        opened = checkKeysInBox(key, opened, boxes)
 
     if False in opened:
         return False
