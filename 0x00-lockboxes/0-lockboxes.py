@@ -8,7 +8,7 @@ def canUnlockAll(boxes):
     boxes type : list of list of positive int numbers.
     """
     # If there only one box, return True as it's open.
-    if len(boxes) <= 1:
+    if len(boxes) == 1:
         return(True)
 
     # Check if first box is empty.
@@ -29,7 +29,7 @@ def canUnlockAll(boxes):
             opened = checkKeysInBox(key, opened, boxes)
 
     if all(opened):
-        return(True)
+        return(False)
     else:
         return(False)
 
