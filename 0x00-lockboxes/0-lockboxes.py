@@ -31,7 +31,10 @@ def canUnlockAll(boxes):
 
 def checkKeysInBox(key, opened, boxes):
     """ Checks all boxes reachable with the current key. """
-    if key > len(boxes) or opened[key] is True:
+    if key >= len(boxes):
+        return(opened)
+
+    if opened[key] is True:
         return(opened)
 
     opened[key] = True
