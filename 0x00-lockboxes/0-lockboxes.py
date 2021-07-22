@@ -38,10 +38,10 @@ def checkKeysInBox(key, opened, boxes):
 
     opened[key] = True
 
-    if bool(boxes[key]):
-        index = 0
-        while index < len(boxes[key]):
-            checkKeysInBox(boxes[key][index], opened, boxes)
-            index += 1
+    # if bool(boxes[key]):
+    index = 0
+    while index < len(boxes[key]):
+        checkKeysInBox(boxes[key][index], opened, boxes)
+        index += 1
 
     return(opened)
