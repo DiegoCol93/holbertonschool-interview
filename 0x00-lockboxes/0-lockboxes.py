@@ -9,7 +9,7 @@ def canUnlockAll(boxes):
     """
     # If there only one box, return True as it's open.
     if len(boxes) <= 1:
-        return(True)
+        return(False)
 
     # Create auxiliary array.
     opened = []
