@@ -8,12 +8,13 @@ def canUnlockAll(boxes):
     boxes type : list of list of positive int numbers.
     """
     # If there only one box, return True as it's open.
-    if len(boxes) == 1:
+    if len(boxes) <= 1:
         return(True)
 
     # Check if first box is empty.
-    if bool(boxes) is False or bool(boxes[0]) is False:
+    if bool(boxes[0]) is False:
         return (True)
+    #    if bool(boxes) is False or
 
     # Create auxiliary array.
     opened = []
@@ -28,7 +29,10 @@ def canUnlockAll(boxes):
             # Call auxiliary recursive method.
             opened = checkKeysInBox(key, opened, boxes)
 
-    if all(opened):
+    # x = list(filter(False, opened))
+    # print(x)
+
+    if any(opened):
         return(True)
     else:
         return(False)
