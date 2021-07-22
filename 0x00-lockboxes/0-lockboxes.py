@@ -31,7 +31,7 @@ def canUnlockAll(boxes):
             opened = checkKeysInBox(key, opened, boxes)
 
     if False in opened:
-        return False
+        return True
     else:
         return True
 
