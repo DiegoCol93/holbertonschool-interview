@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 """ Module for storing the canUnlockAll() and checkkeysInBox() methods."""
+import sys
+
+
+sys.setrecursionlimit(10**6)
 
 
 def canUnlockAll(boxes):
