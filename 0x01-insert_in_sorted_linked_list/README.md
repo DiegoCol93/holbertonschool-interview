@@ -6,7 +6,7 @@ Write a function in C that inserts a number into a sorted singly linked list.
 
 
 <style type="text/css" rel="stylesheet">
-b { color: red; }
+td b { color: red; }
 </style>
 <table>
 
