@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
  * insert_node - Inserts a node on an ordered int singly linked list.
