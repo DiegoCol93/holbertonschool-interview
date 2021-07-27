@@ -43,7 +43,6 @@ Write a function in C that inserts a number into a sorted singly linked list.
 <a href="02-custom-main.c">02-custom-main.c</a>
 ,
 <a href="03-custom-main.c">03-custom-main.c</a>
-,
 </p>
 </td>
 
