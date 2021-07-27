@@ -7,29 +7,39 @@ Write a function in C that inserts a number into a sorted singly linked list.
 - Return: the address of the new node, or NULL if it failed
 
 <table>
+
 <tr>
+
 <td>
 <b>Header File:</b>
 <a href="lists.h">lists.h</a>
 </td>
+
 <td>
+<b></b>
+<a href=""></a>
 Given Files:
 [linked_lists.c](linked_lists.c)
 [0-main.c](0-main.c)
 </td>
+
 </tr>
+
 <tr>
+
 <td>
-Solution:
-[0-insert_number.c](0-insert_number.c)
+<b>Solution:</b>
+<a href="0-insert_number.c">0-insert_number.c</a>
 </td>
 
 <td>
-Test-Cases:
-[00-custom-main.c](00-custom-main.c)
-[01-custom-main.c](01-custom-main.c)
-[02-custom-main.c](02-custom-main.c)
-[03-custom-main.c](03-custom-main.c)
+<b>Test-Cases:</b>
+<a href="00-custom-main.c">00-custom-main.c</a>
+<a href="01-custom-main.c">01-custom-main.c</a>
+<a href="02-custom-main.c">02-custom-main.c</a>
+<a href="03-custom-main.c">03-custom-main.c</a>
 </td>
+
 </tr>
+
 </table>
