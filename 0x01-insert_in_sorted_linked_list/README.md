@@ -4,12 +4,16 @@ Write a function in C that inserts a number into a sorted singly linked list.
 - Prototype: `listint_t *insert_node(listint_t **head, int number);`
 - Return: the address of the new node, or NULL if it failed
 
+
+<style type="text/css" rel="stylesheet">
+b { color: red; }
+</style>
 <table>
 
 <tr>
 
 <td>
-<b style="color: #00FF00;">Header File:</b>
+<b>Header File:</b>
 <a href="lists.h">lists.h</a>
 </td>
 
