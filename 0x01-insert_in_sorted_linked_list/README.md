@@ -9,7 +9,7 @@ Write a function in C that inserts a number into a sorted singly linked list.
 <table>
 <tr>
 <td>
-<h6>Header File:</h6>
+<b>Header File:</b>
 <a href="lists.h">lists.h</a>
 </td>
 <td>
