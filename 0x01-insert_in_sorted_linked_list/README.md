@@ -9,6 +9,7 @@ Write a function in C that inserts a number into a sorted singly linked list.
 <table>
 
 <tr>
+
 <td>
 <b>Header File:</b>
 <a href="lists.h">lists.h</a>
@@ -17,10 +18,13 @@ Write a function in C that inserts a number into a sorted singly linked list.
 <td>
 <b>Given Files:</b>
 <a href="linked_lists.c">linked_lists.c</a>
+<a href="0-main.c">0-main.c</a>
 </td>
+
 </tr>
 
 <tr>
+
 <td>
 <b>Solution:</b>
 <a href="0-insert_number.c">0-insert_number.c</a>
@@ -33,6 +37,7 @@ Write a function in C that inserts a number into a sorted singly linked list.
 <a href="02-custom-main.c">02-custom-main.c</a>
 <a href="03-custom-main.c">03-custom-main.c</a>
 </td>
+
 </tr>
 
 </table>
