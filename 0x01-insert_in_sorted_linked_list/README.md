@@ -18,12 +18,10 @@ td b { color: red; }
 </td>
 
 <td>
-<p>
 <b>Given Files:</b>
 <a href="linked_lists.c">linked_lists.c</a>
 ,
 <a href="0-main.c">0-main.c</a>
-</p>
 </td>
 
 </tr>
@@ -36,7 +34,6 @@ td b { color: red; }
 </td>
 
 <td>
-<p>
 <b>Test-Cases:</b>
 <a href="00-custom-main.c">00-custom-main.c</a>
 ,
@@ -45,7 +42,6 @@ td b { color: red; }
 <a href="02-custom-main.c">02-custom-main.c</a>
 ,
 <a href="03-custom-main.c">03-custom-main.c</a>
-</p>
 </td>
 
 </tr>
