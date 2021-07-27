@@ -11,7 +11,7 @@ Write a function in C that inserts a number into a sorted singly linked list.
 <tr>
 
 <td>
-<b>Header File:</b>
+<th>Header File:</th>
 <a href="lists.h">lists.h</a>
 </td>
 
