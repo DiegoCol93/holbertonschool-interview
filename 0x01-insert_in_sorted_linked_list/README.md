@@ -10,26 +10,26 @@ Write a function in C that inserts a number into a sorted singly linked list.
 <tr>
 <td>
 Header File:
-- [lists.h](lists.h)
+[lists.h](lists.h)
 </td>
 <td>
 Given Files:
-- [linked_lists.c](linked_lists.c)
-- [0-main.c](0-main.c)
+[linked_lists.c](linked_lists.c)
+[0-main.c](0-main.c)
 </td>
 </tr>
 <tr>
 <td>
 Solution:
-- [0-insert_number.c](0-insert_number.c)
+[0-insert_number.c](0-insert_number.c)
 </td>
 
 <td>
 Test-Cases:
-- [00-custom-main.c](00-custom-main.c)
-- [01-custom-main.c](01-custom-main.c)
-- [02-custom-main.c](02-custom-main.c)
-- [03-custom-main.c](03-custom-main.c)
+[00-custom-main.c](00-custom-main.c)
+[01-custom-main.c](01-custom-main.c)
+[02-custom-main.c](02-custom-main.c)
+[03-custom-main.c](03-custom-main.c)
 </td>
 </tr>
 </table>
