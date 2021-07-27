@@ -50,5 +50,5 @@ Write a function in C that inserts a number into a sorted singly linked list.
 
 </table>
 
-![chain](https://media.giphy.com/media/MFabj1E9mgUsqwVWHu/giphy.gif)
+![](https://media.giphy.com/media/MFabj1E9mgUsqwVWHu/giphy.gif)
 
