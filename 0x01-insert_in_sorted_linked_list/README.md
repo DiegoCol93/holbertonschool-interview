@@ -14,8 +14,8 @@ Write a function in C that inserts a number into a sorted singly linked list.
 </td>
 
 <td>
-<b>Given Files:</b>
 <p>
+<b>Given Files:</b>
 <a href="linked_lists.c">linked_lists.c</a>
 ,
 <a href="0-main.c">0-main.c</a>
@@ -32,8 +32,8 @@ Write a function in C that inserts a number into a sorted singly linked list.
 </td>
 
 <td>
-<b>Test-Cases:</b>
 <p>
+<b>Test-Cases:</b>
 <a href="00-custom-main.c">00-custom-main.c</a>
 ,
 <a href="01-custom-main.c">01-custom-main.c</a>
