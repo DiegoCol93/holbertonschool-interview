@@ -10,8 +10,8 @@ Write a function in C that inserts a number into a sorted singly linked list.
 
 <tr>
 
-<th>Header File:</th>
 <td>
+<b>Header File:</b>
 <a href="lists.h">lists.h</a>
 </td>
 
@@ -49,3 +49,5 @@ Write a function in C that inserts a number into a sorted singly linked list.
 </tr>
 
 </table>
+
+<https://media.giphy.com/media/MFabj1E9mgUsqwVWHu/giphy.gif>
