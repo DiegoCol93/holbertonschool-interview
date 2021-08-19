@@ -9,6 +9,7 @@ static void print_grid(int grid[3][3]);
  *     @grid2:   - Right 3x3 int grid.
  */
 
+
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	int i = 0, j = 0;
@@ -18,10 +19,12 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 	{
 		for (i = 0; i <= 3; i++)
 			for (j = 0; j <= 3; j++)
-				grid1[i][j] = grid1[i][j] + grid1[i][j];
+				grid1[i][j] += grid2[i][j];
 
 		print_grid(grid1);
-		topple(grid1);
+		topple(grid1, grid2);
+		print_grid(grid1);
+
 	}
 	printf("=\n");
 }
@@ -36,16 +39,42 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
  *  Return: The new transform matrix calculated.
  */
 
-int* topple(int grid1[3][3], int grid2[3][3])
+
+void topple(int grid[3][3], int newGrid[3][3])
 {
-	int i = 0, j = 0;
+	int i = 0, j = 0, size = 3, minHeight = 3;
 
-	
+	/* for (i = 0; i <= size; i++) */
+	/* 	for (j = 0; j <= size; j++) */
+	/* 		newGrid[i][j] = 0; */
 
-	return(grid2);
+	for (i = 0; i <= size; i++)
+		for (j = 0; j <= size; j++)
+			if (grid[i][j] <= minHeight)
+				newGrid[i][j] = grid[i][j];
+
+	for (i = 0; i <= size; i++)
+		for (j = 0; j <= size; j++)
+		{
+			if (grid[i][j] > minHeight)
+			{
+				newGrid[i][j] += grid[i][j] - 4;
+
+				if (i + 1 < size)
+					newGrid[i + 1][j]++;
+				if (i - 1 >= 0)
+					newGrid[i - 1][j]++;
+				if (j + 1 < size)
+					newGrid[i][j + 1]++;
+				if (j - 1 >= 0)
+					newGrid[i][j - 1]++;
+			}
+		}
+
+	for (i = 0; i <= size; i++)
+		for (j = 0; j <= size; j++)
+			grid[i][j] = newGrid[i][j];
 }
-
-
 
 /**
  * stable - Checks if the 3x3 grid is stable
@@ -57,8 +86,8 @@ int stable(int grid[3][3])
 {
 	int i = 0, j = 0;
 
-	for (i = 0; i <= 3; i++)
-		for (j = 0; j <= 3; j++)
+	for (i = 0; i < 3; i++)
+		for (j = 0; j < 3; j++)
 			if (grid[i][j] > 3)
 				return(1);
 	return(0);
