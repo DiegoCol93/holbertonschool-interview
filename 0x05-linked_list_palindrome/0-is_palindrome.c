@@ -28,11 +28,9 @@ int is_palindrome(listint_t **head)
 			current = current->next;
 		}
 
-		for (i = 0; i < size; i++)
+		for (i = 0; i < size / 2; i++)
 			if (array[i] != array[size - 1 - i])
 				return (-1);
-
-		return (1);
 	}
 	return (1);
 }
