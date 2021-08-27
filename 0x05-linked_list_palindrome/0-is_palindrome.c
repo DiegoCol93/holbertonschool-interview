@@ -6,7 +6,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int array[1024], size = 0, i = 0;
+	int array[10024], size = 0, i = 0;
 	listint_t *current = NULL;
 
 	current = *head;
