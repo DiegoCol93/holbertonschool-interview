@@ -6,21 +6,21 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int *array = NULL, size = 0, i = 0;
+	int array[10024], size = 0, i = 0;
 	listint_t *current = NULL;
 
 	current = *head;
 
 	if (current)
 	{
-		while (current)
-		{
-			size += 1;
-			current = current->next;
-		}
-		array = malloc(sizeof(int) * size);
-		size = 0;
-		current = *head;
+		/* while (current) */
+		/* { */
+		/* 	size += 1; */
+		/* 	current = current->next; */
+		/* } */
+		/* array = malloc(sizeof(int) * size); */
+		/* size = 0; */
+		/* current = *head; */
 		while (current)
 		{
 			array[size] = current->n;
