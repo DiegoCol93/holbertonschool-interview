@@ -25,7 +25,6 @@ File size: 5213
 ━━━━━━━━━━━━━
 How to use:
 ./0-generator.py | ./0-stats.py
-
 """
 from signal import signal, SIGINT
 from re import search, compile
