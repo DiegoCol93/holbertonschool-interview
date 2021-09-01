@@ -36,6 +36,7 @@ def ignore(sig, frame, stats):
     """ Captures the SIGINT signal created by Ctrl-C """
     print_stats(stats)
 
+
 def print_stats(stats):
     """ Prints the stats dicttionary """
     print(f"File size: {stats['size']}")
