@@ -1,38 +1,45 @@
 #!/usr/bin/python3
-"""MODULE"""
+"""
+Print stats from server's logs
+"""
 import sys
 
 
-def print_info(dic, size):
-    """ Print function """
-    print("File size: {:d}".format(size))
-    for i in sorted(dic.keys()):
-        if dic[i] != 0:
-            print("{}: {:d}".format(i, dic[i]))
+def print_stats(file_size_total, status_codes):
+    """Print the stats"""
+    print("File size: {}".format(file_size_total))
+    [print("{}: {}".format(code, status_codes[code]))
+     for code in sorted(status_codes.keys()) if status_codes[code] != 0]
 
 
-def main():
-    """Main function"""
-    sts = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0,
-           "404": 0, "405": 0, "500": 0}
-    count = 0
-    size = 0
-    for line in sys.stdin:
-        if count != 0 and count % 10 == 0:
-            print_info(sts, size)
-        stlist = line.split()
-        count += 1
-        try:
-            size += int(stlist[-1])
-        except:
-            pass
-        try:
-            if stlist[-2] in sts:
-                sts[stlist[-2]] += 1
-        except:
-            pass
-    print_info(sts, size)
+def get_data_from_stdin():
+    """Get data form standard input"""
+    status_codes = {"200": 0, "301": 0, "400": 0,
+                    "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
+    file_size_total = 0
+    line_counts = 0
+    try:
+        while True:
+            try:
+                line = input()
+                data = line.split()
+                if data and len(data) > 2:
+                    line_counts += 1
+                    file_size_total += int(data[-1])
+                    try:
+                        status_codes[data[-2]] += 1
+                    except Exception:
+                        pass
+                if line_counts >= 10:
+                    print_stats(file_size_total, status_codes)
+                    line_counts = 0
+            except EOFError:
+                if line_counts < 10:
+                    print_stats(file_size_total, status_codes)
+                break
+    except KeyboardInterrupt:
+        print_stats(file_size_total, status_codes)
 
 
 if __name__ == "__main__":
-    main()
+    get_data_from_stdin()
