@@ -8,4 +8,4 @@
 - If level is lower than 0, your function must do nothing.
 - You’re allowed to use the math library. Your program will be compiled using the ld flag -lm.
 
-![level-5-sponge.png](level-5-sponge.png "level 5 sponge")
+![level-5-sponge.png](./level-5-sponge.png "level 5 sponge")
