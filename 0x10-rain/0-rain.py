@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Rain calculation module. """
 
+
 def rain(walls):
     """ Calculates the amount of water units that fit between an int list. """
     if not walls or not isinstance(walls, list):
