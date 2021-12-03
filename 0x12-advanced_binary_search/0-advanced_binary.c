@@ -18,14 +18,14 @@ int advanced_binary(int *array, size_t size, int value)
 }
 
 /**
- * recurse - Recursive auxiliary function
+ * recurse - recursively searches for a value
  *
- * @array: - Pointer to the start of the array.
- * @size:  - Number of elements in the array.
- * @value: - Value to look for.
+ * @array: - pointer to the first element of the array to search in
+ *  @min:  - left boundary
+ *  @max:  - right bounday
+ * @value: - value to search for
  *
- * Return: - int type, index of the value found in the array,
- *           (-1) if not found or if array is NULL.
+ * Return: - Index where value is located or -1
  */
 int recurse(int *array, int min, int max, int value)
 {
