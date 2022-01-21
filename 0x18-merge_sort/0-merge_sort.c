@@ -1,75 +1,69 @@
 #include "sort.h"
-#include <unistd.h>
+
 /**
- */
+ * merge - merges left and right arrays
+ * @array: pointer to array
+ * @size: size of the array
+ * @l: pointer to left array
+ * @r: pointer to right array
+ **/
+void merge(int *array, int *l, int *r, size_t size)
+{
+	int i = 0, j = 0, k = 0;
+	int size_l, size_r;
+
+	size_l = size / 2;
+	size_r = size - size_l;
+	printf("Merging...\n");
+	printf("[left]: ");
+	print_array(l, size_l);
+	printf("[right]: ");
+	print_array(r, size_r);
+
+	while (i < size_l && j < size_r)
+	{
+		if (l[i] < r[j])
+			array[k++] = l[i++];
+		else
+			array[k++] = r[j++];
+	}
+
+	while (i < size_l)
+		array[k++] = l[i++];
+
+	while (j < size_r)
+		array[k++] = r[j++];
+	printf("[Done]: ");
+	print_array(array, size);
+}
+
+/**
+ * merge_sort - sorts an array using
+ * the Merge sort algorithm
+ * @array: pointer to array
+ * @size: size of the array
+ **/
 void merge_sort(int *array, size_t size)
 {
-	merge(array, size);
-}
-/**
- */
-void merge(int *array, size_t size)
-{
-	int *cpy;
+	size_t mid = 0, i, j;
+	int left[10000];
+	int right[10000];
 
-	cpy = malloc(sizeof(int) * size);
-	if (!cpy)
-		exit(0);
-
-	cpy_array(array, 0, size, cpy);
-	/* print_array(cpy, size); */
-	top_down_split(cpy, 0, size, array);
-	free(cpy);
-}
-/**
- */
-void top_down_split(int *cpy, size_t idx_b, size_t idx_e, int* array)
-{
-	size_t idx_mid = 0;
-
-	if (idx_e - idx_b < 2)
+	if (!array)
 		return;
 
-	idx_mid = (idx_e + idx_b) / 2;
+	if (size < 2)
+		return;
 
-	top_down_split(array, idx_b, idx_mid, cpy);
-	/* print_array(array, idx_e); */
-	top_down_split(array, idx_mid, idx_e, cpy);
+	mid = size / 2;
 
-	printf("Merging...\n");
-	printf("[left]: %d\n",array[idx_b]);
-	printf("[right]: %d\n",array[idx_mid]);
+	for (i = 0; i < mid; i++)
+		left[i] = array[i];
 
-	top_down_merge(cpy, idx_b, idx_mid, idx_e, array);
-	printf("[Done]: ");
-	print_array(cpy, idx_mid);
-}
-void top_down_merge(int *cpy, size_t idx_b, size_t idx_mid, size_t idx_e,
-					int *array)
-{
-	size_t i = 0, j = 0, k = 0;
+	for (j = mid; j < size; j++)
+		right[j - mid] = array[j];
 
-	i = idx_b;
-	j = idx_mid;
-
-	for(k = idx_b; k < idx_e; k++)
-		if (i < idx_mid && (j >= idx_e || array[i] <= array[j]))
-		{
-			cpy[k] = array[i];
-			i++;
-		}
-		else
-		{
-			cpy[k] = array[j];
-			j++;
-		}
-}
-/**
- */
-void cpy_array(int *array, size_t idx_b, size_t idx_e, int *cpy)
-{
-	size_t i = 0;
-
-	for(i = idx_b; i < idx_e; i++)
-		cpy[i] = array[i];
+	merge_sort(left, mid);
+	merge_sort(right, size - mid);
+	merge(array, left, right, size);
 }
