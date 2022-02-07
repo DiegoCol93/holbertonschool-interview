@@ -1,38 +1,26 @@
-#!/usr/bin/env python3
-""" Module for storing the makeChange() method. """
+#!/usr/bin/python3
+"""Make change script"""
 
 
 def makeChange(coins, total):
-    """
-    Method for calling the recursivelyMakeChange() method.
-
-    Args:
-        coins: List[], of the available denominations.
-        total: Int, Amount of change to provide.
-    """
-    if coins and total > 0:
-        change = 0
-        coins.sort(reverse=True)
-
-        for denominator in coins:
-            times_denominator_fits = total / denominator
-            # print(times_denominator_fits)
-
-            if int(times_denominator_fits:)
-
-            if (times_denominator_fits).is_integer and total > 0:
-                change += int(times_denominator_fits)
-                print(change)
-                # print(total)
-
-                if total <= 0:
-                    print("BREAK")
-                    break
-
-                total = total - (
-                    int(times_denominator_fits) * coins[0]
-                )
-
-                change += int(times_denominator_fits)
-
-    return(change)
+    """Make change function"""
+    change = 0
+    sw = True
+    if(total <= 0):
+        return 0
+    else:
+        while sw is True:
+            save = change
+            for coin in sorted(coins, reverse=True):
+                if total >= coin:
+                    if total % coin == 0:
+                        change = int(change + total / coin)
+                        sw = False
+                        break
+                    else:
+                        change = int(change + total / coin)
+                        total = total % coin
+                        break
+            if change is save:
+                return -1
+    return int(change)
