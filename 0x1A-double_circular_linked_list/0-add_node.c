@@ -2,67 +2,69 @@
 /**
  * add_node_end - Adds a new node to the end of a circular double linked list.
  *
- *    @list:   ─┤ List:   Double pointer to the Head of the linked list.
- *     @str:   ─┤ char[]: String to save on the new node.
+ *	  @list:   ─┤ List:	  Double pointer to the Head of the linked list.
+ *	   @str:   ─┤ char[]: String to save on the new node.
  *
- *    Return:  ─┤ pointer: Address of the new node, NULL on failure.
+ *	  Return:  ─┤ pointer: Address of the new node, NULL on failure.
  */
 List *add_node_end(List **list, char *str)
 {
-	List *start = NULL, *end = NULL, *observer = NULL, new_node;
+	List *new_node = NULL;
+
+	new_node = malloc(sizeof(List));
+
+	if (!new_node)
+		return (NULL);
+
+	new_node->next = new_node;
+	new_node->prev = new_node;
+	new_node->str = str;
 
 	if (*list == NULL)
 	{
-		new_node.next = &new_node;
-		new_node.prev = &new_node;
-		new_node.str = str;
-		*list = &new_node;
-		return (*list);
+		*list = new_node;
+		return (new_node);
 	}
 
-	start = observer = *list;
-
-	if (observer->next != observer->prev)
-	{
-		printf("HELLO");
-	}
-
-
-
-	if (start->prev == NULL)
-		return (NULL);
-
-	while (observer != start)
-		printf("%s", observer->str);
-
-	printf("%s", str);
-	return (NULL);
+	new_node->prev = (*list)->prev;
+	new_node->next = *list;
+	(*list)->prev->next = new_node;
+	(*list)->prev = new_node;
+	return (new_node);
 }
 
 /**
  * add_node_begin - Adds a new node to the beginning of a circular double
- *                  linked list.
+ *					linked list.
  *
- *     @list:    ─┤ List:   Double pointer to the Head of the linked list.
- *      @str:    ─┤ char[]: String to save on the new node.
+ *	   @list:	 ─┤ List:	Double pointer to the Head of the linked list.
+ *		@str:	 ─┤ char[]: String to save on the new node.
  *
- *     Return:   ─┤ pointer: Address of the new node, NULL on failure.
+ *	   Return:	 ─┤ pointer: Address of the new node, NULL on failure.
  */
 List *add_node_begin(List **list, char *str)
 {
-	List *start = NULL, *end = NULL, *observer = NULL;
+	List *new_node = NULL;
+
+	new_node = malloc(sizeof(List));
+
+	if (!new_node)
+		return (NULL);
+
+	new_node->next = new_node;
+	new_node->prev = new_node;
+	new_node->str = str;
 
 	if (*list == NULL)
-		return (NULL);
+	{
+		*list = new_node;
+		return (new_node);
+	}
 
-	start = end = observer = *list;
-
-	if (start->next == NULL)
-		return (NULL);
-
-	while (observer != start)
-		printf("%s", observer->str);
-
-	printf("%s", str);
-	return (NULL);
+	new_node->prev = (*list)->prev;
+	new_node->next = *list;
+	(*list)->prev->next = new_node;
+	(*list)->prev = new_node;
+	*list = new_node;
+	return (new_node);
 }
