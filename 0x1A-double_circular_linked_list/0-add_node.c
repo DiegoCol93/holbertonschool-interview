@@ -19,10 +19,10 @@ List *add_node_end(List **list, char *str)
 	new_node->next = new_node;
 	new_node->prev = new_node;
 	new_node->str = strdup(str);
-	if(!new_node->str)
+	if (!new_node->str)
 	{
 		free(new_node);
-		return(NULL);
+		return (NULL);
 	}
 
 	if (*list == NULL)
@@ -59,10 +59,10 @@ List *add_node_begin(List **list, char *str)
 	new_node->next = new_node;
 	new_node->prev = new_node;
 	new_node->str = strdup(str);
-	if(!new_node->str)
+	if (!new_node->str)
 	{
 		free(new_node);
-		return(NULL);
+		return (NULL);
 	}
 
 	if (*list == NULL)
