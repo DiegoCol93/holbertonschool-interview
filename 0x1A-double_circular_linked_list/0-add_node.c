@@ -16,10 +16,8 @@ List *add_node_end(List **list, char *str)
 	if (!new_node)
 		return (NULL);
 
-	/* new_node->next = new_node; */
-	/* new_node->prev = new_node; */
-	new_node->next = NULL;
-	new_node->prev = NULL;
+	new_node->next = new_node;
+	new_node->prev = new_node;
 	new_node->str = str;
 
 	if (*list == NULL)
@@ -53,10 +51,8 @@ List *add_node_begin(List **list, char *str)
 	if (!new_node)
 		return (NULL);
 
-	/* new_node->next = new_node; */
-	/* new_node->prev = new_node; */
-	new_node->next = NULL;
-	new_node->prev = NULL;
+	new_node->next = new_node;
+	new_node->prev = new_node;
 	new_node->str = str;
 
 	if (*list == NULL)
